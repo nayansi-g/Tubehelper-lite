@@ -6,111 +6,112 @@ import { Zap, ShieldCheck, Heart, Rocket, Building2Icon } from "lucide-react";
 export default function about() {
   return (
   <>
-    <section className="bg-[#f6f7fb] py-24 px-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 ">
+    <section className="bg-[#f6f7fb] py-16 sm:py-20 lg:py-24 px-6 md:px-10">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        {/* LEFT CONTENT */}
-        <div>
+    {/* LEFT CONTENT */}
+    <div>
 
-          {/* Badge */}
-          <span className="inline-block font-bold mb-6 px-5 py-1 text-xs tracking-widest border rounded-full text-purple-700 border-purple-200 bg-purple-50">
-            OUR STORY
-          </span>
+      {/* Badge */}
+      <span className="inline-block font-bold mb-6 px-5 py-1 text-xs tracking-widest border rounded-full text-purple-700 border-purple-200 bg-purple-50">
+        OUR STORY
+      </span>
 
-          {/* Heading */}
-          <h2 className="text-5xl font-extrabold  leading-tight text-slate-900">
-            Helping Local <br />
-            Businesses{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Grow Digitally
-            </span>
-          </h2>
+      {/* Heading */}
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900">
+        Helping Local <br />
+        Businesses{" "}
+        <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          Grow Digitally
+        </span>
+      </h2>
 
-          {/* Paragraph */}
-          <p className="text-slate-500 text-md md:text-lg mt-4 leading-relaxed">
-            TubeHelper Lite was built with one mission: to make cutting-edge
-            digital tools accessible and actionable for every local business —
-            regardless of size, budget, or technical knowledge.
-          </p>
+      {/* Paragraph */}
+      <p className="text-slate-500 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
+        TubeHelper Lite was built with one mission: to make cutting-edge
+        digital tools accessible and actionable for every local business —
+        regardless of size, budget, or technical knowledge.
+      </p>
 
-          <p className="text-slate-500 text-md mt-4 leading-relaxed">
-            We combine professional web design, AI automation, and proven
-            marketing strategies into a simple, done-for-you system that
-            delivers real, measurable results.
-          </p>
+      <p className="text-slate-500 text-sm sm:text-base mt-4 leading-relaxed">
+        We combine professional web design, AI automation, and proven
+        marketing strategies into a simple, done-for-you system that
+        delivers real, measurable results.
+      </p>
 
-          {/* Features */}
-          <div className="grid sm:grid-cols-2 gap-4 mt-8">
+      {/* Features */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
 
-            <FeatureCard
-              icon={<Zap size={18} />}
-              title="Speed"
-              desc="Results in 7–14 days"
-            />
+        <FeatureCard
+          icon={<Zap size={18} />}
+          title="Speed"
+          desc="Results in 7–14 days"
+        />
 
-            <FeatureCard
-              icon={<ShieldCheck size={18} />}
-              title="Transparency"
-              desc="Clear reporting always"
-            />
+        <FeatureCard
+          icon={<ShieldCheck size={18} />}
+          title="Transparency"
+          desc="Clear reporting always"
+        />
 
-            <FeatureCard
-              icon={<Heart size={18} />}
-              title="Care"
-              desc="We treat you like a partner"
-            />
+        <FeatureCard
+          icon={<Heart size={18} />}
+          title="Care"
+          desc="We treat you like a partner"
+        />
 
-            <FeatureCard
-              icon={<Rocket size={18} />}
-              title="Growth"
-              desc="Measurable outcomes"
-            />
+        <FeatureCard
+          icon={<Rocket size={18} />}
+          title="Growth"
+          desc="Measurable outcomes"
+        />
 
+      </div>
+    </div>
+
+    {/* RIGHT IMAGES */}
+    <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+
+      {/* Bottom image */}
+      <div className="absolute -bottom-30 -left-10 sm:left-10 w-[180px] sm:w-[220px] lg:w-[260px] h-[200px] sm:h-[230px] lg:h-[250px] rounded-2xl overflow-hidden">
+        <Image
+          src="/about2.jpg"
+          width={260}
+          height={250}
+          alt="working woman"
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Top image */}
+      <div className="relative ml-20 sm:ml-32 lg:ml-40 w-[220px] sm:w-[260px] lg:w-[300px] h-[300px] sm:h-[340px] lg:h-[390px] rounded-2xl overflow-hidden">
+        <Image
+          src="/about1.jpg"
+          width={300}
+          height={390}
+          alt="team meeting"
+          className="object-cover w-full h-full"
+        />
+
+        {/* Small badge */}
+        <div className="absolute bg-white shadow-lg rounded-xl px-3 sm:px-4 py-2 flex items-center gap-2 bottom-4 right-4">
+          <div className="bg-purple-500 text-white p-2 rounded-md">
+            <Building2Icon size={18} />
           </div>
-
-        </div>
-
-        {/* RIGHT IMAGES */}
-        <div className="relative flex justify-center">
-
-          {/* Bottom image */}
-          <div className="absolute bottom-0 left-11 w-[260px] h-[250px] rounded-2xl overflow-hidden ">
-            <Image
-              src="/about2.jpg"
-              width={260}
-              height={260}
-              alt="working woman"
-              className="object-cover"
-            />
+          <div className="text-xs sm:text-sm">
+            <p className="font-semibold">200+ Businesses</p>
+            <p className="text-gray-500 text-[10px] sm:text-xs">
+              Helped to grow online
+            </p>
           </div>
-
-          {/* Top image */}
-          <div className="ml-40 w-[300px] h-[390px] rounded-3xl  overflow-hidden ">
-            <Image
-              src="/about1.jpg"
-              width={300}
-              height={320}
-              alt="team meeting"
-              className="object-cover"
-            />
-
-            {/* Small badge */}
-            <div className="absolute bg-white shadow-lg rounded-xl px-4 py-2 flex items-center gap-2 bottom-50 right-4">
-              <div className="bg-purple-500 text-white p-2 rounded-md">
-                <Building2Icon />
-              </div>
-              <div className="text-sm">
-                <p className="font-semibold">200+ Businesses</p>
-                <p className="text-gray-500 text-xs">Helped to grow online</p>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
       </div>
-    </section>
+
+    </div>
+
+  </div>
+</section>
     <MissionSection />
     <RealImpactSection />
     <TeamSection />
