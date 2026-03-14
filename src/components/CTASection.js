@@ -34,15 +34,15 @@ export default function CTASection() {
         {/* buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
 
-         <a href="/#Contact"><button className="flex items-center cursor-pointer justify-center gap-2 px-6 py-3 bg-white text-purple-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transition">
-            <Calendar size={18} />
-            Book a Free Demo
-          </button></a> 
+         <button className="flex items-center cursor-pointer justify-center gap-2 px-6 py-3 bg-white text-purple-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transition">
+           <a href="/#Contact"><Calendar size={18} />
+            Book a Free Demo</a>
+          </button> 
 
-          <a className="/services"><button className="flex items-center cursor-pointer justify-center gap-2 px-6 py-3 border border-white/40 rounded-xl hover:bg-white/10 transition">
-            View Our Services
-            <ArrowRight size={18} />
-          </button></a>
+          <button className="flex items-center cursor-pointer justify-center gap-2 px-6 py-3 border border-white/40 rounded-xl hover:bg-white/10 transition">
+           <a className="/services"> View Our Services
+            <ArrowRight size={18} /></a>
+          </button>
 
         </div>
 
