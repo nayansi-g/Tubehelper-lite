@@ -14,7 +14,7 @@ export default function Footer() {
                          width={32}
                          height={32}
                          alt="TubeHelper Lite logo"
-                         className="h-12 w-12  bg-white"
+                         className="h-12 w-12"
                        />
                        <span className="text-lg font-extrabold">
                          <span className=" text-indigo-700">TubeHelper</span> Lite
@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="mt-10 border-t border-gray-200"></div>
 
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>(c) 2026 TubeHelper Lite. All rights reserved.</p>
+          <p>© 2026 TubeHelper Lite. All rights reserved.</p>
 
           <div className="flex gap-6">
             <Link href="/privacy_policy" className="hover:text-black">

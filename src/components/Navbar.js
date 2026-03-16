@@ -27,7 +27,7 @@ export default function Navbar() {
             width={32}
             height={32}
             alt="TubeHelper Lite logo"
-            className="h-12 w-12  bg-white"
+            className="h-12 w-12"
           />
           <span className="text-lg font-extrabold">
             <span className=" text-indigo-700">TubeHelper</span> Lite
