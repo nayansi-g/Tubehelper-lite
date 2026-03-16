@@ -10,18 +10,15 @@ import ContactSection from "@/components/ContactSection"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white ">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <Hero />
       <IndustriesSection />
       <ServicesSection />
-
       <ProcessSection />
       <Testimonals />
-      
      <section id='BookDemo'><CTASection /></section> 
      <section id='Contact'><ContactSection /></section> 
-
     </div>
   );
 }
