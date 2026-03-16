@@ -66,17 +66,17 @@ export default function Hero() {
               <div className="flex -space-x-2">
                 <User
                   alt="Client avatar 1"
-                  className="h-7 w-7 bg-black text-white rounded-full border"
+                  className="h-7 w-7 bg-gray-800 text-gray-300 rounded-full "
                 />
                 <User
                   // src="/avatar2.jpg"
                   alt="Client avatar 2"
-                  className="h-7 w-7 bg-black text-white rounded-full border"
+                  className="h-7 w-7 bg-gray-800 text-gray-300 rounded-full "
                 />
                 <User
                   // src="/avatar3.jpg"
                   alt="Client avatar 3"
-                  className="h-7 w-7 bg-black text-white rounded-full border"
+                  className="h-7 w-7 bg-gray-800 text-gray-300 rounded-full "
                 />
               </div>
 
