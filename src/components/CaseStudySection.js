@@ -64,7 +64,7 @@ export default function CaseStudySection() {
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <Image
                 src={CASE_STUDY.image}
-                alt="Case study preview"
+                alt="Riverside Dental website and analytics dashboard"
                 width={680}
                 height={520}
                 className="w-full h-auto"

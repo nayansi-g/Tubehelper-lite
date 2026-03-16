@@ -3,8 +3,22 @@
 import { AlertTriangle, FileText, Gavel, HelpCircle, ShieldCheck } from "lucide-react";
 import Reveal from "../../components/Reveal";
 
+const siteUrl = "https://www.tubehelperlite.xyz";
+
 export const metadata = {
   title: "Terms of Use | TubeHelper Lite",
+  description:
+    "Read the Terms of Use for TubeHelper Lite to understand the rules, conditions, and limitations for using our website and services.",
+  alternates: {
+    canonical: "/terms_of_use",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "TubeHelper Lite Terms of Use",
+  url: `${siteUrl}/terms_of_use`,
   description:
     "Read the Terms of Use for TubeHelper Lite to understand the rules, conditions, and limitations for using our website and services.",
 };
@@ -104,6 +118,10 @@ const SECTIONS = [
 export default function TermsOfUsePage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="border-b border-gray-200 bg-gradient-to-b from-[#eef2ff] to-white">
         <div className="mx-auto max-w-5xl px-6 py-16 sm:px-8 lg:px-10">
           <Reveal>

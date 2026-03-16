@@ -17,11 +17,31 @@ import {
   ShieldCheck,
   Sparkles,
   TrendingUp,
-  User,
   Users,
   Zap,
 } from "lucide-react";
 import RealImpactSection from "../../components/RealImpact";
+import Reveal from "../../components/Reveal";
+
+const siteUrl = "https://www.tubehelperlite.xyz";
+
+export const metadata = {
+  title: "About",
+  description:
+    "Learn how TubeHelper Lite helps local businesses grow with AI-powered websites, automation, and marketing systems.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About TubeHelper Lite",
+  url: `${siteUrl}/about`,
+  description:
+    "Learn how TubeHelper Lite helps local businesses grow with AI-powered websites, automation, and marketing systems.",
+};
 
 const STORY_FEATURES = [
   { icon: <Zap size={18} />, title: "Speed", desc: "Results in 7-14 days" },
@@ -63,28 +83,28 @@ const MISSION_CARDS = [
 
 const TEAM_MEMBERS = [
   {
-    // img: "/team1.jpg",
+    img: "/team1.jpg",
     name: "Marcus Reid",
     role: "Founder & Lead Strategist",
     desc: "10+ years helping local businesses grow digitally.",
     tag: "Growth Strategy",
   },
   {
-    // img: "/team2.jpg",
+    img: "/team2.jpg",
     name: "Priya Nair",
     role: "Head of Web Design",
     desc: "Award-winning designer passionate about high converting websites.",
     tag: "UI/UX Design",
   },
   {
-    // img: "/team3.jpg",
+    img: "/team3.jpg",
     name: "David Chen",
     role: "AI Automation Lead",
     desc: "Builds AI voice agents and WhatsApp bots for local businesses.",
     tag: "AI Systems",
   },
   {
-    // img: "/team4.jpg",
+    img: "/team4.jpg",
     name: "Aisha Johnson",
     role: "SEO & Content Strategist",
     desc: "Helped 100+ businesses rank higher in search engines.",
@@ -174,82 +194,94 @@ const FAQS = [
 
 export default function AboutPage() {
   return (
-    <>
+    <main className="bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative overflow-hidden bg-[#f6f7fb] py-16 sm:py-20 lg:py-24 px-6 md:px-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(125,211,252,0.35),transparent_40%),radial-gradient(circle_at_90%_20%,rgba(167,243,208,0.35),transparent_35%)]" />
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <SectionBadge>OUR STORY</SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900">
-              Helping Local <br />
-              Businesses{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent">
-                Grow Digitally
-              </span>
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
-              TubeHelper Lite was built with one mission: to make cutting-edge
-              digital tools accessible and actionable for every local business --
-              regardless of size, budget, or technical knowledge.
-            </p>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              We combine professional web design, AI automation, and proven
-              marketing strategies into a simple, done-for-you system that
-              delivers real, measurable results.
-            </p>
+          <Reveal>
+            <div>
+              <SectionBadge>OUR STORY</SectionBadge>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900">
+                Helping Local <br />
+                Businesses{" "}
+                <span className="bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent">
+                  Grow Digitally
+                </span>
+              </h1>
+              <p className="text-slate-600 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
+                TubeHelper Lite was built with one mission: to make cutting-edge
+                digital tools accessible and actionable for every local business --
+                regardless of size, budget, or technical knowledge.
+              </p>
+              <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+                We combine professional web design, AI automation, and proven
+                marketing strategies into a simple, done-for-you system that
+                delivers real, measurable results.
+              </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              {STORY_FEATURES.map((item) => (
-                <FeatureCard key={item.title} {...item} />
-              ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                {STORY_FEATURES.map((item, index) => (
+                  <Reveal key={item.title} delay={index * 0.05}>
+                    <FeatureCard {...item} />
+                  </Reveal>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
-            <div className="absolute -bottom-20 -left-6 sm:left-10 w-[180px] sm:w-[220px] lg:w-[260px] h-[200px] sm:h-[230px] lg:h-[250px] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/about2.jpg"
-                width={260}
-                height={250}
-                alt="working woman"
-                className="object-cover w-full h-full"
-              />
-            </div>
+          <Reveal delay={0.1}>
+            <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+              <div className="absolute -bottom-20 -left-6 sm:left-10 w-[180px] sm:w-[220px] lg:w-[260px] h-[200px] sm:h-[230px] lg:h-[250px] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/about2.jpg"
+                  width={260}
+                  height={250}
+                  alt="Local business owner reviewing growth results"
+                  className="object-cover w-full h-full"
+                />
+              </div>
 
-            <div className="relative ml-16 sm:ml-28 lg:ml-40 w-[220px] sm:w-[260px] lg:w-[300px] h-[300px] sm:h-[340px] lg:h-[390px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/about1.jpg"
-                width={300}
-                height={390}
-                alt="team meeting"
-                className="object-cover w-full h-full"
-              />
+              <div className="relative ml-16 sm:ml-28 lg:ml-40 w-[220px] sm:w-[260px] lg:w-[300px] h-[300px] sm:h-[340px] lg:h-[390px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/about1.jpg"
+                  width={300}
+                  height={390}
+                  alt="TubeHelper Lite team planning a marketing strategy"
+                  className="object-cover w-full h-full"
+                />
 
-              <div className="absolute bg-white shadow-lg rounded-xl px-3 sm:px-4 py-2 flex items-center gap-2 bottom-4 right-4">
-                <div className="bg-indigo-600 text-white p-2 rounded-md">
-                  <Building2Icon size={18} />
-                </div>
-                <div className="text-xs sm:text-sm">
-                  <p className="font-semibold">200+ Businesses</p>
-                  <p className="text-gray-500 text-[10px] sm:text-xs">
-                    Helped to grow online
-                  </p>
+                <div className="absolute bg-white shadow-lg rounded-xl px-3 sm:px-4 py-2 flex items-center gap-2 bottom-4 right-4">
+                  <div className="bg-indigo-600 text-white p-2 rounded-md">
+                    <Building2Icon size={18} />
+                  </div>
+                  <div className="text-xs sm:text-sm">
+                    <p className="font-semibold">200+ Businesses</p>
+                    <p className="text-gray-500 text-[10px] sm:text-xs">
+                      Helped to grow online
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* <StatsSection /> */}
+      <StatsSection />
       <MissionSection />
       <ProcessSection />
-      <RealImpactSection />
+      <Reveal>
+        <RealImpactSection />
+      </Reveal>
       <TestimonialsSection />
       <TeamSection />
       <FAQSection />
       <CTASection />
-    </>
+    </main>
   );
 }
 
@@ -279,22 +311,28 @@ function MissionSection() {
   return (
     <section className="bg-white py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto text-center">
-        <SectionBadge>OUR MISSION</SectionBadge>
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
-          Why We Built{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent">
-            TubeHelper Lite
-          </span>
-        </h2>
-        <p className="max-w-2xl mx-auto text-slate-500 mt-4 leading-relaxed">
-          Too many talented local business owners are invisible online -- not
-          because they lack a great product or service, but because they don't
-          have the right digital systems in place. We built TubeHelper Lite to
-          fix that.
-        </p>
+        <Reveal>
+          <div>
+            <SectionBadge>OUR MISSION</SectionBadge>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+              Why We Built{" "}
+              <span className="bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent">
+                TubeHelper Lite
+              </span>
+            </h2>
+            <p className="max-w-2xl mx-auto text-slate-500 mt-4 leading-relaxed">
+              Too many talented local business owners are invisible online -- not
+              because they lack a great product or service, but because they don't
+              have the right digital systems in place. We built TubeHelper Lite to
+              fix that.
+            </p>
+          </div>
+        </Reveal>
         <div className="grid md:grid-cols-2 gap-8 mt-16">
-          {MISSION_CARDS.map((card) => (
-            <MissionCard key={card.title} {...card} />
+          {MISSION_CARDS.map((card, index) => (
+            <Reveal key={card.title} delay={index * 0.05}>
+              <MissionCard {...card} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -322,39 +360,49 @@ function TeamSection() {
   return (
     <section className="bg-[#f6f7fb] py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto text-center">
-        <SectionBadge>THE TEAM</SectionBadge>
-        <h2 className=" text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-          People Who{" "}
-          <span className="bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent">
-            Drive Your Growth
-          </span>
-        </h2>
+        <Reveal>
+          <div>
+            <SectionBadge>THE TEAM</SectionBadge>
+            <h2 className=" text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
+              People Who{" "}
+              <span className="bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent">
+                Drive Your Growth
+              </span>
+            </h2>
 
-        <p className="max-w-2xl mx-auto text-slate-600 mt-4">
-          A tight-knit team of digital specialists who are passionate about
-          helping local businesses succeed online.
-        </p>
+            <p className="max-w-2xl mx-auto text-slate-600 mt-4">
+              A tight-knit team of digital specialists who are passionate about
+              helping local businesses succeed online.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
-          {TEAM_MEMBERS.map((member) => (
-            <TeamCard key={member.name} {...member} />
+          {TEAM_MEMBERS.map((member, index) => (
+            <Reveal key={member.name} delay={index * 0.05}>
+              <TeamCard {...member} />
+            </Reveal>
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-sky-100 to-emerald-100 rounded-3xl mt-24 py-16 px-6 md:px-10">
-          <h3 className="text-3xl font-extrabold">
-            Our Core{" "}
-            <span className="bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent">
-              Values
-            </span>
-          </h3>
+        <Reveal>
+          <div className="bg-gradient-to-r from-sky-100 to-emerald-100 rounded-3xl mt-24 py-16 px-6 md:px-10">
+            <h3 className="text-3xl font-extrabold">
+              Our Core{" "}
+              <span className="bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent">
+                Values
+              </span>
+            </h3>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {VALUES.map((value) => (
-              <ValueCard key={value.title} {...value} />
-            ))}
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              {VALUES.map((value, index) => (
+                <Reveal key={value.title} delay={index * 0.05}>
+                  <ValueCard {...value} />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -363,8 +411,14 @@ function TeamSection() {
 function TeamCard({ img, name, role, desc, tag }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition text-center">
-      <div className="flex justify-center ">
-        <User className="border border-gray-300 rounded-full p-2 w-10 h-10" />
+      <div className="flex justify-center">
+        <Image
+          src={img}
+          width={70}
+          height={70}
+          alt={`${name} - ${role}`}
+          className="rounded-xl object-cover"
+        />
       </div>
 
       <h4 className="font-semibold text-lg mt-4">{name}</h4>
@@ -398,14 +452,13 @@ function StatsSection() {
   return (
     <section className="bg-white py-16 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {STATS.map((stat) => (
-          <div
-            key={stat.label}
-            className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm"
-          >
-            <p className="text-3xl font-extrabold text-slate-900">{stat.value}</p>
-            <p className="text-sm text-slate-500 mt-2">{stat.label}</p>
-          </div>
+        {STATS.map((stat, index) => (
+          <Reveal key={stat.label} delay={index * 0.05}>
+            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm">
+              <p className="text-3xl font-extrabold text-slate-900">{stat.value}</p>
+              <p className="text-sm text-slate-500 mt-2">{stat.label}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -416,32 +469,33 @@ function ProcessSection() {
   return (
     <section className="bg-[#f6f7fb] py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div>
-            <SectionBadge>OUR PROCESS</SectionBadge>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              A simple, repeatable system that scales
-            </h2>
-            <p className="text-slate-600 mt-3 max-w-2xl">
-              Every step is designed to be fast, measurable, and easy to manage.
-            </p>
+        <Reveal>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <SectionBadge>OUR PROCESS</SectionBadge>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+                A simple, repeatable system that scales
+              </h2>
+              <p className="text-slate-600 mt-3 max-w-2xl">
+                Every step is designed to be fast, measurable, and easy to manage.
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 text-indigo-700 font-semibold">
+              <Sparkles size={16} />
+              Proven playbooks for local growth
+            </div>
           </div>
-          <div className="inline-flex items-center gap-2 text-indigo-700 font-semibold">
-            <Sparkles size={16} />
-            Proven playbooks for local growth
-          </div>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8 mt-12">
           {PROCESS_STEPS.map((step, index) => (
-            <div
-              key={step.title}
-              className="bg-white rounded-2xl p-8 shadow-md border border-slate-200"
-            >
-              <p className="text-sm font-semibold text-indigo-600">Step {index + 1}</p>
-              <h3 className="text-xl font-semibold mt-3">{step.title}</h3>
-              <p className="text-slate-600 text-sm mt-2">{step.desc}</p>
-            </div>
+            <Reveal key={step.title} delay={index * 0.05}>
+              <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-200">
+                <p className="text-sm font-semibold text-indigo-600">Step {index + 1}</p>
+                <h3 className="text-xl font-semibold mt-3">{step.title}</h3>
+                <p className="text-slate-600 text-sm mt-2">{step.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -453,28 +507,31 @@ function TestimonialsSection() {
   return (
     <section className="bg-white py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto text-center">
-        <SectionBadge>CLIENT VOICES</SectionBadge>
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-          Real stories from real local businesses
-        </h2>
-        <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
-          We measure success in booked calendars and growing customer lists.
-        </p>
+        <Reveal>
+          <div>
+            <SectionBadge>CLIENT VOICES</SectionBadge>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              Real stories from real local businesses
+            </h2>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              We measure success in booked calendars and growing customer lists.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8 mt-12 text-left">
-          {TESTIMONIALS.map((item) => (
-            <div
-              key={item.name}
-              className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-gradient-to-br from-white to-slate-50"
-            >
-              <div className="flex items-center gap-2 text-indigo-600">
-                <MessageSquareQuote size={18} />
-                <span className="text-sm font-semibold">Testimonial</span>
+          {TESTIMONIALS.map((item, index) => (
+            <Reveal key={item.name} delay={index * 0.05}>
+              <div className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-gradient-to-br from-white to-slate-50">
+                <div className="flex items-center gap-2 text-indigo-600">
+                  <MessageSquareQuote size={18} />
+                  <span className="text-sm font-semibold">Testimonial</span>
+                </div>
+                <p className="text-slate-700 mt-4">{item.quote}</p>
+                <p className="font-semibold mt-6">{item.name}</p>
+                <p className="text-sm text-slate-500">{item.role}</p>
               </div>
-              <p className="text-slate-700 mt-4">{item.quote}</p>
-              <p className="font-semibold mt-6">{item.name}</p>
-              <p className="text-sm text-slate-500">{item.role}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -486,24 +543,27 @@ function FAQSection() {
   return (
     <section className="bg-[#f6f7fb] py-24 px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
-        <SectionBadge>FAQ</SectionBadge>
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-          Questions we get most often
-        </h2>
+        <Reveal>
+          <div>
+            <SectionBadge>FAQ</SectionBadge>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              Questions we get most often
+            </h2>
+          </div>
+        </Reveal>
         <div className="grid md:grid-cols-2 gap-6 mt-10">
-          {FAQS.map((item) => (
-            <div
-              key={item.q}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"
-            >
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="text-emerald-600 mt-1" size={18} />
-                <div>
-                  <p className="font-semibold text-slate-900">{item.q}</p>
-                  <p className="text-slate-600 text-sm mt-2">{item.a}</p>
+          {FAQS.map((item, index) => (
+            <Reveal key={item.q} delay={index * 0.04}>
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="text-emerald-600 mt-1" size={18} />
+                  <div>
+                    <p className="font-semibold text-slate-900">{item.q}</p>
+                    <p className="text-slate-600 text-sm mt-2">{item.a}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -517,39 +577,47 @@ function CTASection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_40%)]"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-5 text-sm text-white border border-white/20 rounded-full bg-white/10 backdrop-blur">
-          <Briefcase size={14} />
-          <span>Let's Work Together</span>
-        </div>
+        <Reveal>
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-5 text-sm text-white border border-white/20 rounded-full bg-white/10 backdrop-blur">
+            <Briefcase size={14} />
+            <span>Let's Work Together</span>
+          </div>
+        </Reveal>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-          Ready to Join 200+ <br />
-          Businesses Growing with <br />
-          TubeHelper Lite?
-        </h2>
+        <Reveal delay={0.05}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+            Ready to Join 200+ <br />
+            Businesses Growing with <br />
+            TubeHelper Lite?
+          </h2>
+        </Reveal>
 
-        <p className="mt-6 text-lg text-white/80 max-w-2xl mx-auto">
-          Let's have a conversation about your business goals. Book a free
-          discovery call and we'll show you exactly how we can help you grow.
-        </p>
+        <Reveal delay={0.1}>
+          <p className="mt-6 text-lg text-white/80 max-w-2xl mx-auto">
+            Let's have a conversation about your business goals. Book a free
+            discovery call and we'll show you exactly how we can help you grow.
+          </p>
+        </Reveal>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-          <Link
-            href="/#BookDemo"
-            className="flex items-center gap-2 bg-white text-[#1E3A8A] font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition"
-          >
-            <Calendar size={18} />
-            Book a Free Demo
-          </Link>
+        <Reveal delay={0.15}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link
+              href="/#BookDemo"
+              className="flex items-center gap-2 bg-white text-[#1E3A8A] font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition"
+            >
+              <Calendar size={18} />
+              Book a Free Demo
+            </Link>
 
-          <Link
-            href="/services"
-            className="flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-xl hover:bg-white/10 transition"
-          >
-            View Our Services
-            <ArrowRight size={18} />
-          </Link>
-        </div>
+            <Link
+              href="/services"
+              className="flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-xl hover:bg-white/10 transition"
+            >
+              View Our Services
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

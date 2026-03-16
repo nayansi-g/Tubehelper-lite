@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2 font-extrabold text-lg">
               <Image
-                src="/logo-sample.svg"
+                src="/logo.png"
                 width={28}
                 height={28}
                 alt="TubeHelper Lite logo"

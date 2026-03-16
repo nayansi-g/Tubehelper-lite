@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo-sample.svg"
+            src="/logo.png"
             width={32}
             height={32}
             alt="TubeHelper Lite logo"

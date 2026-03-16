@@ -19,6 +19,26 @@ import {
 } from "lucide-react";
 import Reveal from "../../components/Reveal";
 
+const siteUrl = "https://www.tubehelperlite.xyz";
+
+export const metadata = {
+  title: "Services",
+  description:
+    "Explore TubeHelper Lite services: websites, AI voice agents, WhatsApp automation, SEO, Google Business, and social media management.",
+  alternates: {
+    canonical: "/services",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "TubeHelper Lite Services",
+  url: `${siteUrl}/services`,
+  description:
+    "Explore TubeHelper Lite services: websites, AI voice agents, WhatsApp automation, SEO, Google Business, and social media management.",
+};
+
 const SERVICES = [
   {
     id: "website",
@@ -229,6 +249,10 @@ const FAQS = [
 export default function ServicesPage() {
   return (
     <main className="bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative overflow-hidden bg-[#f6f7fb] py-20 sm:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,140,248,0.25),transparent_40%)]" />
         <div className="relative mx-auto max-w-5xl px-4 text-center">
@@ -534,7 +558,7 @@ function ServiceSection({ data, index }) {
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src={data.image}
-                  alt={data.title}
+                  alt={`${data.badge} service preview`}
                   width={700}
                   height={500}
                   className="w-full h-auto"
@@ -624,7 +648,7 @@ function MarketingSection({ data }) {
             src={data.image}
             width={520}
             height={360}
-            alt={data.title}
+            alt={`${data.badge} marketing preview`}
             className="rounded-xl shadow-xl w-full h-auto"
           />
         </div>
