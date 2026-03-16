@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertTriangle, FileText, Gavel, HelpCircle, ShieldCheck } from "lucide-react";
 import Reveal from "../../components/Reveal";
 

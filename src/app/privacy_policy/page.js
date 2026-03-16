@@ -1,5 +1,3 @@
-"use client";
-
 import { ShieldCheck, Lock, Mail, Database, Eye, FileText } from "lucide-react";
 import Reveal from "../../components/Reveal";
 

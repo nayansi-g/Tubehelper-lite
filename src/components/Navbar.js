@@ -21,13 +21,13 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 lg:px-16 py-4">
         
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center ">
           <Image
             src="/logo.png"
             width={32}
             height={32}
             alt="TubeHelper Lite logo"
-            className="h-8 w-8 rounded-md border border-slate-200 bg-white p-1"
+            className="h-12 w-12  bg-white"
           />
           <span className="text-lg font-extrabold">
             <span className=" text-indigo-700">TubeHelper</span> Lite

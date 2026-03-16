@@ -9,16 +9,16 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           <div className="max-w-sm">
             <div className="flex items-center gap-2 font-extrabold text-lg">
-              <Image
-                src="/logo.png"
-                width={28}
-                height={28}
-                alt="TubeHelper Lite logo"
-                className="h-7 w-7 rounded-md border border-slate-200 bg-white p-1"
-              />
-              <span>
-                <span className="text-indigo-600 ">TubeHelper</span> Lite
-              </span>
+             <Image
+                         src="/logo.png"
+                         width={32}
+                         height={32}
+                         alt="TubeHelper Lite logo"
+                         className="h-12 w-12  bg-white"
+                       />
+                       <span className="text-lg font-extrabold">
+                         <span className=" text-indigo-700">TubeHelper</span> Lite
+                       </span>
             </div>
 
             <p className="mt-4 text-gray-600 pr-10 mx-auto text-sm leading-relaxed">
